@@ -21,7 +21,6 @@
 - **Version Control:** Git & GitHub  
 - **Design:** Figma (for UI/UX prototypes)
 
-*(Optional: Add GIFs or screenshots of your app here)*
 
 
 
