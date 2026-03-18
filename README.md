@@ -1,7 +1,5 @@
 # Willow 
 
-## Preview
-
 ![Willow App Preview](public/mockup.png)
 
 
