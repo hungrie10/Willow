@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "title": "Small steps matter",
+    "message": "Every small decision you make today is building something bigger.",
+    "tone": "calm",
+    "category": "progress"
+  },
+  {
+    "id": 2,
+    "title": "You’re moving forward",
+    "message": "Even the smallest step is still a step ahead of where you were.",
+    "tone": "encouraging",
+    "category": "growth"
+  },
+  {
+    "id": 3,
+    "title": "Consistency wins",
+    "message": "Little actions repeated daily create powerful results over time.",
+    "tone": "motivational",
+    "category": "discipline"
+  },
+  {
+    "id": 4,
+    "title": "No pressure, just progress",
+    "message": "You don’t have to rush—just keep going at your own pace.",
+    "tone": "cozy",
+    "category": "mindset"
+  },
+  {
+    "id": 5,
+    "title": "One thing at a time",
+    "message": "Focus on one small task. That’s how big things get done.",
+    "tone": "calm",
+    "category": "focus"
+  },
+  {
+    "id": 6,
+    "title": "Progress is quiet",
+    "message": "Not all progress is loud. Sometimes it’s just showing up again.",
+    "tone": "cozy",
+    "category": "progress"
+  },
+  {
+    "id": 7,
+    "title": "You’re doing enough",
+    "message": "Even a little effort today is something to be proud of.",
+    "tone": "encouraging",
+    "category": "mindset"
+  },
+  {
+    "id": 8,
+    "title": "Start small",
+    "message": "You don’t need a perfect plan, just a place to begin.",
+    "tone": "calm",
+    "category": "focus"
+  },
+  {
+    "id": 9,
+    "title": "Momentum builds",
+    "message": "Tiny actions create momentum that carries you forward.",
+    "tone": "motivational",
+    "category": "progress"
+  },
+  {
+    "id": 10,
+    "title": "Keep showing up",
+    "message": "Consistency isn’t perfection, it’s simply not giving up.",
+    "tone": "encouraging",
+    "category": "discipline"
+  },
+  {
+    "id": 11,
+    "title": "Your pace is valid",
+    "message": "There’s no rush. Progress at your own rhythm still counts.",
+    "tone": "cozy",
+    "category": "mindset"
+  },
+  {
+    "id": 12,
+    "title": "Little by little",
+    "message": "Small steps done daily lead to big results over time.",
+    "tone": "calm",
+    "category": "growth"
+  },
+  {
+    "id": 13,
+    "title": "Focus gently",
+    "message": "Give your attention to one thing and let that be enough.",
+    "tone": "cozy",
+    "category": "focus"
+  },
+  {
+    "id": 14,
+    "title": "You’re building something",
+    "message": "Every task you complete is part of a bigger picture.",
+    "tone": "motivational",
+    "category": "progress"
+  },
+  {
+    "id": 15,
+    "title": "Keep it simple",
+    "message": "You don’t need to do everything, just something meaningful.",
+    "tone": "calm",
+    "category": "focus"
+  },
+  {
+    "id": 16,
+    "title": "Effort compounds",
+    "message": "What feels small today becomes powerful tomorrow.",
+    "tone": "motivational",
+    "category": "growth"
+  },
+  {
+    "id": 17,
+    "title": "Stay present",
+    "message": "Focus on what’s in front of you, one step at a time.",
+    "tone": "calm",
+    "category": "focus"
+  },
+  {
+    "id": 18,
+    "title": "You’re closer",
+    "message": "Every step brings you nearer than you were yesterday.",
+    "tone": "encouraging",
+    "category": "progress"
+  },
+  {
+    "id": 19,
+    "title": "Gentle progress",
+    "message": "You don’t need pressure to move forward.",
+    "tone": "cozy",
+    "category": "mindset"
+  },
+  {
+    "id": 20,
+    "title": "Keep going softly",
+    "message": "You can move forward without being hard on yourself.",
+    "tone": "cozy",
+    "category": "mindset"
+  },
+  {
+    "id": 21,
+    "title": "You’ve got this",
+    "message": "Even when it feels slow, you’re still making progress.",
+    "tone": "encouraging",
+    "category": "growth"
+  },
+  {
+    "id": 22,
+    "title": "Build the habit",
+    "message": "It’s not about intensity, it’s about consistency.",
+    "tone": "motivational",
+    "category": "discipline"
+  },
+  {
+    "id": 23,
+    "title": "Small wins count",
+    "message": "Celebrate the little things—they add up quickly.",
+    "tone": "cozy",
+    "category": "progress"
+  },
+  {
+    "id": 24,
+    "title": "Start where you are",
+    "message": "You don’t need perfect conditions to begin.",
+    "tone": "calm",
+    "category": "growth"
+  },
+  {
+    "id": 25,
+    "title": "Clarity comes with action",
+    "message": "You don’t need all the answers, just take the next step.",
+    "tone": "motivational",
+    "category": "focus"
+  }
+]
