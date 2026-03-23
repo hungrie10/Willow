@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.2s linear;
 }
 
 *::-webkit-scrollbar {
@@ -313,7 +314,7 @@ header nav ul li a {
 #third_part input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 18px;
+  width: 1px;
   height: 18px;
   border-radius: 50%;
   background: white;
@@ -333,4 +334,279 @@ header nav ul li a {
   margin-top: 15px;
   font-size: 0.9rem;
   opacity: 0.6;
+}
+
+/* This is the part that styles the scrollable cards */
+
+#fourth_part {
+  width: 100%;
+  padding: 40px 0;
+  border: solid 0.9rem white;
+  overflow-x: hidden;
+}
+
+/* Question: why is overflow-x auto instead of scroll?
+  Copilot -  Using `overflow-x: auto` allows the scrollbar to appear only when necessary, meaning it will only show if the content exceeds the width of the container. This provides a cleaner and more user-friendly experience, as it avoids displaying a scrollbar when it's not needed. On the other hand, `overflow-x: scroll` would always show a scrollbar, even if the content fits within the container, which can be visually distracting and unnecessary.
+
+  Me -  so technically no need for webkit-scrollbar 
+  right 
+
+  Copilot - Correct, if you are using `overflow-x: auto`, the scrollbar will only appear when necessary, so you may not need to hide it with `::-webkit-scrollbar`. However, if you want to ensure that the scrollbar is hidden regardless of the content size, you can still use `::-webkit-scrollbar` to hide it. It ultimately depends on your design preferences and how you want the user experience to be.
+
+  Me - is web dev still a relevant skill in 2026?
+
+  Copilot - Yes, web development is still a relevant skill in 2026. The web continues to be a primary platform for communication, commerce, and entertainment, and there is a constant demand for skilled web developers to create and maintain websites and web applications. Additionally, with the rise of new technologies and frameworks, web development is an ever-evolving field that offers many opportunities for growth and innovation.
+
+  Me - I'm in a semester before and I want a job in tech  so I need direction
+
+  Copilot - If you're in your final semester and looking for a job in tech, here are some steps you can take to increase your chances of landing a job:
+   
+  -  Build a strong portfolio: Create projects that showcase your skills and knowledge in web development. This can include personal projects, contributions to open-source projects, or internships.
+
+  -  Network: Attend tech meetups, conferences, and events to connect with professionals in the industry. Join online communities and forums related to web development to engage with others and learn from their experiences.
+
+  -  Tailor your resume and cover letter: Highlight your relevant skills, experiences, and projects in your resume and cover letter. Make sure to customize them for each job application to show how you can contribute to the specific company.
+
+  Me:
+  - I've never done like an internship were i work for a company before, how do I get one of those?
+
+  - Would they even take me even though im in 3rd year?
+
+  Copilot:
+   
+
+*/
+
+#inner_fourth_layer {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 1;
+  scroll-behavior: smooth;
+}
+
+.product_motto_box {
+  min-width: 800px;
+  height: 600px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.product_motto_box:hover {
+  transform: scale(1.05);
+}
+
+.product_motto_box .img_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.product_motto_box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product_motto_box span {
+  position: relative;
+  z-index: 2;
+  color: transparent;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 0%;
+  background: rgba(0, 0, 0, 0.353);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.product_motto_box h1 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.product_motto_box p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.product_motto_box:hover span {
+  height: 100%;
+  opacity: 1;
+  color: white;
+}
+
+.product_motto_box:hover {
+  margin: 0.53%;
+  opacity: 1;
+}
+
+#landing_page_home a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Registration Page */
+#login_page {
+  font-family: 'Courier New', Courier, monospace;
+  background: #00000005;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login_page form {
+  padding: 3% !important;
+  border: none;
+  width: 60%;
+  height: 70%;
+  background: white;
+  /* border-radius: 0.25rem; */
+}
+
+@media (min-width: 1000px) {
+  #login_page h2 {
+    font-size: 3vw;
+  }
+
+  #login_page form {
+    width: 30%;
+    /* height: 35%; */
+  }
+}
+
+#login_page form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.2rem;
+}
+
+#login_page main {
+  /* background: #000; */
+  height: 70%;
+  padding: 2%;
+}
+
+#login_page main span {
+  display: flex;
+  flex-direction: column;
+}
+
+#login_page main span input {
+  padding: 7px;
+  border: solid 0.25px black;
+  border-radius: 0.25rem;
+  height: 5vh;
+}
+
+#login_page main span input:focus {
+  border: solid 0.25px #ffbf00;
+}
+
+#login_page footer {
+  display: flex;
+  flex-direction: column;
+  /* padding: 3%; */
+  justify-content: flex-end;
+}
+
+#login_page footer div {
+  /* background: #000; */
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 3%;
+}
+
+/* footer  */
+#login_page input[type="submit"] {
+  width: 30%;
+  padding: 1%;
+  background: #2200ff;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  /* padding: 0.6em 1.2em; */
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  color: white;
+  transition: border-color 0.25s;
+}
+
+#login_page input[type="submit"]:hover {
+  border-color: #646cff;
+}
+
+#login_page input[type="submit"]:focus,
+#login_page input[type="submit"]:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+#login_page .password-message {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Error style */
+#login_page #no_match {
+  color: #ff4d4f;
+  background-color: rgba(255, 77, 79, 0.08);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* Success style */
+#login_page #match {
+  color: #22c55e;
+  background-color: rgba(34, 197, 94, 0.08);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+#login_page h2{
+  font-size:  2vw;
+}
+
+/* & Loader of the login page */
+#login_loader{
+  background-color: white;
+  width: 40%;
+  height: 5px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+#login_loader #load_object{
+  filter: drop-shadow(0 0 2rem blue);
+  background: linear-gradient(90deg,blue 70%, rgb(233, 4, 233));
+  animation: identifier 3s ease-in-out;
+}
+
+
+@keyframes identifier {
+  from{
+    width: 0%;
+  }
+  to{
+    width: 100%;
+  }
 }

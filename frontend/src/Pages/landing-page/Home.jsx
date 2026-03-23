@@ -1,12 +1,86 @@
 import React, { useState } from "react";
 import Header from "../../component/Header";
 import cloud from "./../../assets/clouds.png";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import data from "../../../public/data.json";
 import shuffle_arr from "../../../public/shuffle";
 
 function Home() {
   let [dummy_data, set_dummy_data] = useState([...data]);
+
+  let motto = [
+    {
+      id: 1,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "POSE",
+      description:
+        "Transform your time into progress with a system that helps you prioritize what matters...",
+    },
+    {
+      id: 2,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "FLOW",
+      description:
+        "Find your rhythm and let productivity feel natural instead of forced.",
+    },
+    {
+      id: 3,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "FOCUS",
+      description:
+        "Lock in on what matters and cut through the noise like a laser.",
+    },
+    {
+      id: 4,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "MOMENTUM",
+      description: "Build small wins into unstoppable forward motion.",
+    },
+    {
+      id: 5,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "CLARITY",
+      description: "Clear the mental fog and make decisions with confidence.",
+    },
+    {
+      id: 6,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "DRIVE",
+      description: "Stay energized and push through even when motivation dips.",
+    },
+    {
+      id: 7,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "BALANCE",
+      description: "Juggle work, life, and growth without dropping the ball.",
+    },
+    {
+      id: 8,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "LAUNCH",
+      description:
+        "Turn ideas into action and get moving without overthinking.",
+    },
+    {
+      id: 9,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "TIME",
+      description: "Master your hours instead of letting them slip away.",
+    },
+    {
+      id: 10,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "SYSTEM",
+      description:
+        "Build habits and workflows that work even when you don’t feel like it.",
+    },
+    {
+      id: 11,
+      img: "https://i.pinimg.com/736x/21/86/4a/21864a20145e17f3a4d47e3f6ae8f298.jpg",
+      title: "GROWTH",
+      description: "Improve daily, even if it’s just 1% at a time.",
+    },
+  ];
 
   const [used, setUsed] = useState([]);
 
@@ -14,37 +88,25 @@ function Home() {
   const [value, setValue] = useState(0);
   const [message, setMessage] = useState("Drag to see growth →");
 
-
-  
-
   function changeMessage() {
+    let my_arr = [...dummy_data];
+    if (my_arr.length == 0) {
+      my_arr = shuffle_arr(used);
+      setUsed([]);
+    }
 
-      let my_arr = [...dummy_data];
-      if (my_arr.length == 0) {
-          my_arr = shuffle_arr(used);
-          setUsed([]);
-      }
-    
-      // This function selects a random message
-      const the_trash = used;
-      const my_data = my_arr.pop();
-      the_trash.push(my_data);
-      setMessage(my_data["message"]);
-      set_dummy_data(my_arr);
-      setUsed(the_trash)
-      
+    // This function selects a random message
+    const the_trash = used;
+    const my_data = my_arr.pop();
+    the_trash.push(my_data);
+    setMessage(my_data["message"]);
+    set_dummy_data(my_arr);
+    setUsed(the_trash);
   }
 
   function changeValue(e) {
     setSlider(e.target.value);
-
-    if (slider == 25) {
-      setValue(slider * 1000);
-    } else if (slider < 65) {
-      setValue(slider * 10000);
-    } else {
-      setValue(slider * 50000);
-    }
+    setValue(slider);
     changeMessage();
   }
 
@@ -72,7 +134,7 @@ function Home() {
             </article>
 
             <div className="preview"></div>
-            <button>Get Started</button>
+            <button><Link to={"/register"}>Get Started</Link></button>
           </div>
         </div>
       </section>
@@ -110,13 +172,33 @@ function Home() {
           <br />
           <input
             type="range"
-            min="1"
-            max="100"
+            min="0"
+            max={data.length}
             value={slider}
             id="slider"
             onInput={(e) => changeValue(e)}
           />
         </div>
+      </section>
+      <br />
+      <section id="fourth_part">
+        <section id="inner_fourth_layer">
+          {motto.map((i) => {
+            return (
+              <div className="product_motto_box">
+                <div className="img_bg">
+                  <img src={i.img} alt="" />
+                </div>
+                <span>
+                  <h1>{i.title}</h1>
+                  <p>
+                    {i.description}
+                  </p>
+                </span>
+              </div>
+            );
+          })}
+        </section>
       </section>
     </main>
   );
