@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header() {
   return (
-   <header id="header">
+   <header id="dash-header">
  
     {/* Software Name */}
     <h2 className="logo">Willow</h2>

@@ -11,7 +11,7 @@
 }
 
 /* These are the styles for the header */
-header {
+#landing_page_home header {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -24,7 +24,7 @@ header {
   color: #472d78;
 }
 
-header nav ul {
+#landing_page_home header nav ul {
   display: flex;
   gap: 10%;
 }
@@ -33,65 +33,12 @@ header nav ul li {
   list-style: none;
 }
 
-header nav ul li a {
+#landing_page_home header nav ul li a {
   color: #472d78;
   text-decoration: none;
 }
 
 /* These styles are for the Landing Page */
-/* #landing_page_home #home{
-
-  width: 100%;
-  height: 100vh;
-  background: #472D78;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#landing_page_home #home #inner_home{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2%;
-  width: 90%;
-  height: 90%;
-  background: transparent;
-  color: white;
-  padding: 2%;
-  border: solid rgba(255, 250, 250, 0.405);
-  border-radius: 0.25rem;
-  text-align: center;
-}
-
-#landing_page_home #home #inner_home .view{
-  background: white;
-  height: 100%;
-  width: 90%;
-  margin-top: 3%;
-  transform: translateY(1%) scaleY(1.32);
-  }
-
-#landing_page_home #home #inner_home article{
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  gap: 9%;
-}
-
-#landing_page_home #home #inner_home button{
-  width: 20%;
-  height: 10%;
-  transform: translateY(150%);
-}
-
-@media (min-width:1000px) {
-#landing_page_home #home #inner_home button{
-  transform: translateY(290%);
-
-}
-} */
-
 /* *& First Part */
 #landing_page_home {
   /* border: solid; */
@@ -452,14 +399,14 @@ header nav ul li a {
   opacity: 1;
 }
 
-#landing_page_home a{
+#landing_page_home a {
   color: #fff;
   text-decoration: none;
 }
 
 /* Registration Page */
 #login_page {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   background: #00000005;
   position: fixed;
   top: 0;
@@ -582,12 +529,12 @@ header nav ul li a {
   border-radius: 6px;
 }
 
-#login_page h2{
-  font-size:  2vw;
+#login_page h2 {
+  font-size: 2vw;
 }
 
 /* & Loader of the login page */
-#login_loader{
+#login_loader {
   background-color: white;
   width: 40%;
   height: 5px;
@@ -595,18 +542,187 @@ header nav ul li a {
   overflow: hidden;
 }
 
-#login_loader #load_object{
+#login_loader #load_object {
   filter: drop-shadow(0 0 2rem blue);
-  background: linear-gradient(90deg,blue 70%, rgb(233, 4, 233));
+  background: linear-gradient(90deg, blue 70%, rgb(233, 4, 233));
   animation: identifier 3s ease-in-out;
 }
 
-
 @keyframes identifier {
-  from{
+  from {
     width: 0%;
   }
-  to{
+  to {
     width: 100%;
   }
+}
+
+/* The Dashboard Styling */
+#willows_dashboard img {
+  width: 40px;
+  border-radius: 100%;
+  height: 40px;
+}
+
+#willows_dashboard header {
+  /* border: solid; */
+  padding: 5px;
+}
+
+#willows_dashboard header ul {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.219);
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#willows_dashboard #profile {
+  gap: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#willows_dashboard #inner_dashboard {
+  display: flex;
+  /* border: solid; */
+  height: 70vh;
+  /* padding: 7px; */
+}
+
+#willows_dashboard #inner_dashboard aside {
+  width: 6%;
+  display: flex;
+  justify-content: center;
+}
+
+#willows_dashboard #inner_dashboard aside nav li{
+  list-style: none;
+}
+
+#willows_dashboard #inner_dashboard aside nav {
+  margin-top: 20px;
+  background: #00000015;
+  height: 40%;
+  width: 80%;
+  align-items: center;
+  display: flex;
+  justify-content: center
+}
+
+#willows_dashboard #inner_dashboard aside nav ul{
+  /* background: gold; */
+ height: 90%;
+ width: 80%;
+ display: flex;
+ flex-direction: column;
+ justify-content: 
+ space-between;
+ align-items: center;
+ gap: 2%;
+}
+
+
+#willows_dashboard #inner_dashboard aside nav ul li{
+  width: 100%;
+  height: 100%;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 0.32rem
+}
+
+#willows_dashboard #inner_dashboard aside nav ul li a{
+  text-decoration: none;
+}
+
+#willows_dashboard #inner_dashboard aside nav ul li:nth-of-type(2){
+  background: rgb(105, 0, 128);
+}
+
+#main_dashboard{
+  /* border: solid; */
+  /* width: ; */
+  display: flex;
+  flex-direction: column;
+  /* padding: 2%; */
+  width: 90%;
+  margin-top: 20px;
+  width: 93%;
+  flex-direction: column;
+}
+
+.banner {
+  padding: 30px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #3b00ff, #6a00ff);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid #000;
+  height: 60%;
+}
+
+.banner h1 {
+  font-size: 28px;
+}
+
+.banner p {
+  margin: 10px 0;
+}
+
+.banner button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+/* Avatars */
+.avatars {
+  display: flex;
+  gap: 10px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+}
+
+.cards {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding:   1%;
+  /* border: solid; */
+  height: 100%;
+}
+
+.card {
+  /* height: 5vw; */
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  color: #888;
+  border: 1px solid #ddd;
+}
+
+footer{
+  display: flex;
+  /* border: solid; */
+  height: 10vw;
+  padding: 1%;
+}
+
+footer #inner_footer{
+ box-shadow: 0 0 2rem rgba(0, 0, 0, 0.107);
+ width: 100%;
 }
