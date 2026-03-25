@@ -691,12 +691,13 @@ header nav ul li {
 .banner {
   padding: 30px;
   border-radius: 4px;
-  background: linear-gradient(90deg, #3b00ff, #6a00ff);
+  background: #3b00ff;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60%;
+  border:  #ffd700 solid;
 }
 
 .banner h1 {
