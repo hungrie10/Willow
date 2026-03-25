@@ -1,9 +1,9 @@
 import React from "react";
 import profile from "../../assets/profile_test.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGridHorizontal } from "@fortawesome/free-solid-svg-icons";
+import { faGridHorizontal, faRedo } from "@fortawesome/free-solid-svg-icons";
 import { faWifi } from "@fortawesome/free-solid-svg-icons";
-import { faChartBar } from "@fortawesome/free-regular-svg-icons";
+import { faChartBar, faHome, faMoon } from "@fortawesome/free-regular-svg-icons";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 function Dashboard() {
@@ -18,11 +18,19 @@ function Dashboard() {
         </div>
 
         {/* This let's you access the users history */}
-       <button>⌛</button>
+          <button id="redo_btn">
+          <FontAwesomeIcon icon={faRedo} />  
+       </button>
 
         <div id="nav-btns">
-          <button>🏠</button>
-          <button>🌙</button>
+            <button>
+          <FontAwesomeIcon icon={faHome} />  
+              
+          </button>
+            <button>
+          <FontAwesomeIcon icon={faMoon} />  
+              
+          </button>
           </div>
           </ul>
       </header>

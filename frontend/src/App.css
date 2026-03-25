@@ -565,12 +565,21 @@ header nav ul li {
 }
 
 #willows_dashboard header {
-  /* border: solid; */
+  border-bottom: solid 0.2px rgba(0, 0, 0, 0.132);
   padding: 5px;
 }
 
+
+
+#willows_dashboard header ul #redo_btn {
+  width: 5%;
+  border-radius: 0.2rem;
+  background: transparent;
+  padding: 1%;
+ border: solid 0.2px rgba(0, 0, 0, 0.136);
+}
+
 #willows_dashboard header ul {
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.219);
   padding: 7px;
   display: flex;
   align-items: center;
@@ -582,6 +591,26 @@ header nav ul li {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#nav-btns {
+  justify-content: end;
+  width: 15%;
+  display: flex;
+  height: 1%;
+  gap: 2%;
+}
+
+#nav-btns button {
+  width: 30%;
+  border-radius: 0.2rem;
+  background: transparent;
+  border: solid 0.2px ;
+  padding: 8%;
+}
+
+#willows_dashboard header  button {
+ border: solid 0.2px rgba(0, 0, 0, 0.136);
 }
 
 #willows_dashboard #inner_dashboard {
