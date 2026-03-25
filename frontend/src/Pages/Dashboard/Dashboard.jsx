@@ -1,5 +1,10 @@
 import React from "react";
-import profile from "../../assets/profile_test.jpg"
+import profile from "../../assets/profile_test.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGridHorizontal } from "@fortawesome/free-solid-svg-icons";
+import { faWifi } from "@fortawesome/free-solid-svg-icons";
+import { faChartBar } from "@fortawesome/free-regular-svg-icons";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 function Dashboard() {
   return (
@@ -27,11 +32,11 @@ function Dashboard() {
         <aside>
           <nav>
             <ul>
-              <li><a href="#">🚀</a></li>
-              <li><a href="#">🚀</a></li>
-              <li><a href="#">🚀</a></li>
-              <li><a href="#">🚀</a></li>
-              <li><a href="#">🚀</a></li>
+              <li><a href="#">👑</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faGridHorizontal} /></a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faWifi} /></a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faChartBar} /></a></li>
+              <li><a href="#">⚡</a></li>
             </ul>
           </nav>
         </aside>
@@ -65,7 +70,10 @@ function Dashboard() {
       </section>
 
       <footer>
-        <section id="inner_footer"></section>
+        <section id="inner_footer">
+          <button><FontAwesomeIcon icon={faPlusCircle} /></button>
+          <span></span>
+        </section>
       </footer>
     </section>
   );
