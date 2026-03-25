@@ -784,7 +784,9 @@ footer #inner_footer button:nth-of-type(1):active {
 }
 
 footer #inner_footer span {
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.125);
+  /* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.125); */
   width: 94%;
+ border: solid 0.2px rgba(0, 0, 0, 0.136);
+
   /* border: solid; */
 }
