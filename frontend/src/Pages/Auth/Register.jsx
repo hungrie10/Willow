@@ -25,7 +25,7 @@ function Register() {
     };
 
     if (match) {
-      const res = await fetch("http://localhost:3000/users/login", {
+      const res = await fetch("http://localhost:3000/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(my_details),
@@ -34,13 +34,17 @@ function Register() {
       const my_response = await res.json();
 
       if (my_response["my_token"]) {
-        console.log(my_response["my_token"]);
-        set_loader(true)
+        console.log(my_response["token"]);
+        set_loader(true);
+
         setTimeout(() => {
-          localStorage.setItem("my_token", my_response["my_token"]);
+          localStorage.setItem("token", my_response["my_token"]);
           location.assign("/dashboard");
         }, 4500);
+
+
       } else {
+        localStorage.removeItem("my_token");
         console.log(my_response["message"]);
       }
     } else {
@@ -129,7 +133,7 @@ function Register() {
 
       {loader && (
         <section id="login_loader">
-            <div id="load_object">my loader</div>
+          <div id="load_object">my loader</div>
         </section>
       )}
     </section>
