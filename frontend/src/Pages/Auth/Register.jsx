@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 function Register() {
   const [email, setEmail] = useState("");
-  const [create_a_password, set_create_a_password] = useState(".");
+  const [create_a_password, set_create_a_password] = useState("p");
   const [confirm_a_password, set_confirm_a_password] = useState("");
   const [match, setMatch] = useState(false);
 
