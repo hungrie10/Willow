@@ -37,6 +37,7 @@ function Dashboard() {
       }
 
       const data = await res.json();
+      console.log(data)
       set_user_data(data.user);
     } catch (err) {
       console.error(err);
@@ -56,7 +57,7 @@ function Dashboard() {
             <div id="profile">
               <img src={profile} alt="" />
               <span id="username">
-                {user_data ? user_data.username : "Loading..."}
+                {user_data ? user_data.name : "Loading..."}
               </span>
             </div>
 

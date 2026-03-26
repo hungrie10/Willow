@@ -33,18 +33,18 @@ function Register() {
 
       const my_response = await res.json();
 
-      if (my_response["my_token"]) {
+      if (my_response["token"]) {
         console.log(my_response["token"]);
         set_loader(true);
 
         setTimeout(() => {
-          localStorage.setItem("token", my_response["my_token"]);
+          localStorage.setItem("token", my_response["token"]);
           location.assign("/dashboard");
         }, 4500);
 
 
       } else {
-        localStorage.removeItem("my_token");
+        localStorage.removeItem("token");
         console.log(my_response["message"]);
       }
     } else {
