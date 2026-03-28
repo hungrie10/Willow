@@ -558,6 +558,7 @@ header nav ul li {
 }
 
 /* The Dashboard Styling */
+
 #willows_dashboard header img {
   width: 40px;
   border-radius: 100%;
@@ -570,14 +571,12 @@ header nav ul li {
   padding: 5px;
 }
 
-
-
 #willows_dashboard header ul #redo_btn {
   width: 5%;
   border-radius: 0.2rem;
   background: transparent;
   padding: 1%;
- border: solid 0.2px rgba(0, 0, 0, 0.136);
+  border: solid 0.2px rgba(0, 0, 0, 0.136);
 }
 
 #willows_dashboard header ul {
@@ -606,12 +605,12 @@ header nav ul li {
   width: 30%;
   border-radius: 0.2rem;
   background: transparent;
-  border: solid 0.2px ;
+  border: solid 0.2px;
   padding: 8%;
 }
 
-#willows_dashboard header  button {
- border: solid 0.2px rgba(0, 0, 0, 0.136);
+#willows_dashboard header button {
+  border: solid 0.2px rgba(0, 0, 0, 0.136);
 }
 
 #willows_dashboard #inner_dashboard {
@@ -636,7 +635,7 @@ header nav ul li {
   width: 80%;
   align-items: center;
   display: flex;
- border: solid 0.2px rgba(0, 0, 0, 0.174);
+  border: solid 0.2px rgba(0, 0, 0, 0.174);
   justify-content: center;
 }
 
@@ -697,15 +696,15 @@ header nav ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60%;
-  border:  #ffd700 solid;
+  height: 50%;
+  border: #ffd700 solid;
 }
 
 #willows_dashboard .banner h1 {
   font-size: 28px;
 }
 
-#willows_dashboard  .banner p {
+#willows_dashboard .banner p {
   margin: 10px 0;
 }
 
@@ -739,7 +738,7 @@ header nav ul li {
   gap: 15px;
   padding: 0.8%;
   /* border: solid; */
-  height: 100%;
+  height: 40%;
 }
 
 #willows_dashboard .card {
@@ -785,8 +784,62 @@ header nav ul li {
   transform: scale(0.85);
 }
 
-#willows_dashboard  footer #inner_footer span {
+#willows_dashboard footer #inner_footer span {
   /* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.125); */
   width: 94%;
- border: solid 0.2px rgba(0, 0, 0, 0.136);
+  border: solid 0.2px rgba(0, 0, 0, 0.136);
+}
+
+#willows_dashboard.drk_mode {
+  background: #000;
+  color: #fff;
+}
+
+#willows_dashboard.drk_mode header {
+  border-bottom: solid 0.2px rgba(210, 208, 208, 0.132);
+  background: #000;
+}
+
+#willows_dashboard.drk_mode header ul #redo_btn {
+  /* border: solid 0.2px rgba(0, 0, 0, 0.136); */
+  border: solid 0.2px rgba(210, 208, 208, 0.132);
+  background: #000;
+}
+
+#willows_dashboard.drk_mode .icon {
+  color: rgb(255, 255, 255);
+}
+
+#willows_dashboard.drk_mode #btn:hover .icon {
+  color: rgb(255, 255, 255);
+}
+
+#willows_dashboard.drk_mode .card {
+  background: #000;
+}
+
+#willows_dashboard.drk_mode footer {
+  width: 100%;
+  /* z-index: -2; */
+  position: fixed;
+  /* bottom: -3%; */
+  height: 8%;
+  padding: 7px;
+  display: flex;
+  justify-content: end;
+  background: rgb(1, 0, 0);
+}
+
+#willows_dashboard.drk_mode footer #inner_footer button:nth-of-type(1) {
+  color: rgb(243, 243, 243);
+  border: none;
+  height: 0;
+  width: 0;
+  border-radius: 0.25rem;
+}
+
+#willows_dashboard.drk_mode footer #inner_footer span {
+  /* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.125); */
+  width: 94%;
+  border: solid 0.2px rgba(247, 247, 247, 0.337);
 }

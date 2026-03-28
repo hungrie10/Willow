@@ -9,8 +9,12 @@ import {
   faMoon,
 } from "@fortawesome/free-regular-svg-icons";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { useRef } from "react";
 
 function Dashboard() {
+  
+  const bod_ref = useRef(null);
+
   const [user_data, set_user_data] = useState();
 
   const check_for_token = async () => {
@@ -43,13 +47,17 @@ function Dashboard() {
       console.error(err);
     }
   };
+   
+  const changeModes = function () {
+    bod_ref.current.classList.toggle('drk_mode')
+  }
 
   useEffect(() => {
     check_for_token();
   }, []);
 
   return (
-    <section id="willows_dashboard">
+    <section ref={bod_ref} id="willows_dashboard" className="drk_mode">
       <div>
         <header>
           <ul>
@@ -63,15 +71,15 @@ function Dashboard() {
 
             {/* This let's you access the users history */}
             <button id="redo_btn">
-              <FontAwesomeIcon icon={faRedo} />
+              <FontAwesomeIcon className="icon" icon={faRedo} />
             </button>
 
             <div id="nav-btns">
               <button>
-                <FontAwesomeIcon icon={faHome} />
+                <FontAwesomeIcon  className="icon"  icon={faHome} />
               </button>
-              <button>
-                <FontAwesomeIcon icon={faMoon} />
+              <button id="btn" onClick={changeModes} >
+                <FontAwesomeIcon  className="icon"  icon={faMoon} />
               </button>
             </div>
           </ul>
@@ -87,17 +95,17 @@ function Dashboard() {
               </li>
               <li>
                 <a href="#">
-                  <FontAwesomeIcon icon={faGridHorizontal} />
+                  <FontAwesomeIcon  className="icon"  icon={faGridHorizontal} />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FontAwesomeIcon icon={faWifi} />
+                  <FontAwesomeIcon  className="icon"  icon={faWifi} />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FontAwesomeIcon icon={faChartBar} />
+                  <FontAwesomeIcon  className="icon"  icon={faChartBar} />
                 </a>
               </li>
               <li>
@@ -138,7 +146,7 @@ function Dashboard() {
           <button>
             <FontAwesomeIcon icon={faPlusCircle} />
           </button>
-          <span></span>
+          {/* <span></span> */}
         </section>
       </footer>
     </section>
