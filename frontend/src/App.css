@@ -748,7 +748,14 @@ header nav ul li {
   padding: 10px;
   color: #888;
   border: 1px solid #ddd;
+  display: flex;
+  height: 90%;
+  justify-content: ;
+  align-items: center;
+  flex-direction: column;
 }
+
+
 
 #willows_dashboard footer {
   width: 100%;
@@ -789,6 +796,62 @@ header nav ul li {
   width: 94%;
   border: solid 0.2px rgba(0, 0, 0, 0.136);
 }
+
+.card-controls {
+  display: flex;
+  width: 90%;
+  gap: 1px;
+  margin-bottom: 12px;
+justify-content: space-between;
+}
+
+/* Icons */
+#willow-dashboard .card .icon {
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s ease;
+}
+
+#willow-dashboard .card .icon:hover {
+  opacity: 1;
+}
+
+#willow-dashboard .card .icon.edit:hover {
+  color: #4cafef;
+}
+
+#willow-dashboard .card .icon.delete:hover {
+  color: #ff4d4d;
+}
+
+/* Content */
+#willow-dashboard .card .card-content {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#willow-dashboard  .card-title {
+  font-size: 16px;
+  font-weight: 500;
+text-align: center;
+}
+
+#willows_dashboard .card .card-content{
+  border: solid 0.2px;
+  border: solid 0.2px rgba(0, 0, 0, 0.144) !important;
+  padding: 12px;
+  width: 100%;
+  height: 90% !important;
+}
+
+#willows_dashboard .card {
+
+}
+
+
 
 #willows_dashboard.drk_mode {
   background: #000;
@@ -842,4 +905,18 @@ header nav ul li {
   /* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.125); */
   width: 94%;
   border: solid 0.2px rgba(247, 247, 247, 0.337);
+}
+
+#willow-dashboard.drk_mode .card {
+  background: #111;
+  color: #fff;
+  border: 1px solid #222;
+}
+
+#willow-dashboard.drk_mode .card .icon {
+  color: #bbb;
+}
+
+#willow-dashboard.drk_mode .card .card-title {
+  color: #fff;
 }
