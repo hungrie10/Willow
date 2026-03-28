@@ -12,10 +12,17 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
 
 function Dashboard() {
-  
   const bod_ref = useRef(null);
 
   const [user_data, set_user_data] = useState();
+  const [tasks, setTasks] = useState([]);
+
+
+  const [curr_disp, set_curr_disp] = useState(0);
+
+  const changeModes = function () {
+    bod_ref.current.classList.toggle("drk_mode");
+  };
 
   const check_for_token = async () => {
     const token = localStorage.getItem("token");
@@ -26,7 +33,7 @@ function Dashboard() {
     }
 
     try {
-       const res = await fetch("http://localhost:3000/profile", {
+      const res = await fetch("http://localhost:3000/profile", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -41,20 +48,33 @@ function Dashboard() {
       }
 
       const data = await res.json();
-      console.log(data)
+      console.log(data);
       set_user_data(data.user);
     } catch (err) {
       console.error(err);
     }
   };
-   
-  const changeModes = function () {
-    bod_ref.current.classList.toggle('drk_mode')
-  }
+
+  const get_users_tasks = async () => {
+    const username = user_data["username"];
+    console.log(username);
+
+    const res = await fetch(`http://localhost:3000/tasks?username=${username}`);
+
+    const data = await res.json();
+    setTasks(data["foundUser"]["tasks"]);
+    console["log"](data["foundUser"]["tasks"]);
+  };
 
   useEffect(() => {
     check_for_token();
   }, []);
+
+  useEffect(() => {
+    if (user_data) {
+      get_users_tasks();
+    }
+  }, [user_data]);
 
   return (
     <section ref={bod_ref} id="willows_dashboard" className="drk_mode">
@@ -65,7 +85,7 @@ function Dashboard() {
             <div id="profile">
               <img src={profile} alt="" />
               <span id="username">
-                {user_data ? user_data.name : "Loading..."}
+                {user_data ? user_data.username : "Loading..."}
               </span>
             </div>
 
@@ -76,10 +96,10 @@ function Dashboard() {
 
             <div id="nav-btns">
               <button>
-                <FontAwesomeIcon  className="icon"  icon={faHome} />
+                <FontAwesomeIcon className="icon" icon={faHome} />
               </button>
-              <button id="btn" onClick={changeModes} >
-                <FontAwesomeIcon  className="icon"  icon={faMoon} />
+              <button id="btn" onClick={changeModes}>
+                <FontAwesomeIcon className="icon" icon={faMoon} />
               </button>
             </div>
           </ul>
@@ -95,17 +115,17 @@ function Dashboard() {
               </li>
               <li>
                 <a href="#">
-                  <FontAwesomeIcon  className="icon"  icon={faGridHorizontal} />
+                  <FontAwesomeIcon className="icon" icon={faGridHorizontal} />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FontAwesomeIcon  className="icon"  icon={faWifi} />
+                  <FontAwesomeIcon className="icon" icon={faWifi} />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FontAwesomeIcon  className="icon"  icon={faChartBar} />
+                  <FontAwesomeIcon className="icon" icon={faChartBar} />
                 </a>
               </li>
               <li>
@@ -131,12 +151,18 @@ function Dashboard() {
             </div>
           </section>
           <section className="cards">
-            <div className="card">Take a quiz</div>
-            <div className="card">Go for a walk</div>
-            <div className="card">Study for 30 minutes</div>
-            <div className="card">Step away from your screen</div>
-            <div className="card">Drink Water</div>
-            <div className="card">Get enough sleep</div>
+            {/* {tasks?.map((i) => (
+              <div className="card">{i["title"]}</div>
+            ))} */}
+
+            
+
+            <div className="card">{tasks[curr_disp]?.title}</div>
+            <div className="card">{tasks[curr_disp + 1]?.title}</div>
+            <div className="card">{tasks[curr_disp + 2]?.title}</div>
+             
+
+           
           </section>
         </main>
       </section>

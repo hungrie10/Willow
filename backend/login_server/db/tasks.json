@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "alice_johnson",
+      "tasks": [
+        { "id": 1, "title": "Finish dashboard UI", "completed": false },
+        { "id": 2, "title": "Connect login API", "completed": true },
+        { "id": 3, "title": "Fix sidebar navigation", "completed": false },
+        { "id": 4, "title": "Add dark mode toggle", "completed": true },
+        { "id": 5, "title": "Create profile card", "completed": false },
+        { "id": 6, "title": "Set up notifications", "completed": false },
+        { "id": 7, "title": "Optimize React state", "completed": true },
+        { "id": 8, "title": "Write route protection", "completed": false },
+        { "id": 9, "title": "Add logout button", "completed": false },
+        { "id": 10, "title": "Style mobile layout", "completed": true },
+        { "id": 11, "title": "Build task modal", "completed": false },
+        { "id": 12, "title": "Fix loading spinner", "completed": false },
+        { "id": 13, "title": "Connect user profile", "completed": true },
+        { "id": 14, "title": "Add toast messages", "completed": false },
+        { "id": 15, "title": "Deploy frontend", "completed": false }
+      ]
+    },
+    {
+      "id": 2,
+      "username": "bob_smith",
+      "tasks": [
+        { "id": 1, "title": "Create signup form", "completed": true },
+        { "id": 2, "title": "Fix React routing", "completed": false },
+        { "id": 3, "title": "Design navbar", "completed": true },
+        { "id": 4, "title": "Build settings page", "completed": false },
+        { "id": 5, "title": "Add animations", "completed": false },
+        { "id": 6, "title": "Fix login errors", "completed": true },
+        { "id": 7, "title": "Add remember me", "completed": false },
+        { "id": 8, "title": "Improve CSS layout", "completed": false },
+        { "id": 9, "title": "Create footer", "completed": true },
+        { "id": 10, "title": "Refactor components", "completed": false },
+        { "id": 11, "title": "Optimize images", "completed": false },
+        { "id": 12, "title": "Create modal", "completed": true },
+        { "id": 13, "title": "Test responsiveness", "completed": false },
+        { "id": 14, "title": "Fix API bug", "completed": false },
+        { "id": 15, "title": "Deploy app", "completed": true }
+      ]
+    },
+    {
+      "id": 3,
+      "username": "charlie_brown",
+      "tasks": [
+        { "id": 1, "title": "Design task cards", "completed": false },
+        { "id": 2, "title": "Add task filters", "completed": true },
+        { "id": 3, "title": "Fix checkbox logic", "completed": false },
+        { "id": 4, "title": "Add due dates", "completed": false },
+        { "id": 5, "title": "Task reminder UI", "completed": true },
+        { "id": 6, "title": "Create progress bar", "completed": false },
+        { "id": 7, "title": "Fix drag and drop", "completed": false },
+        { "id": 8, "title": "Update task colors", "completed": true },
+        { "id": 9, "title": "Test dashboard", "completed": false },
+        { "id": 10, "title": "Write helper utils", "completed": false },
+        { "id": 11, "title": "Create task archive", "completed": true },
+        { "id": 12, "title": "Add search", "completed": false },
+        { "id": 13, "title": "Build quick add", "completed": false },
+        { "id": 14, "title": "Improve UX", "completed": true },
+        { "id": 15, "title": "Deploy update", "completed": false }
+      ]
+    }
+  ]
+}

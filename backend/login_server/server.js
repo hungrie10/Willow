@@ -95,6 +95,39 @@ app.get("/profile", authenticateToken, (req, res) => {
   });
 });
 
+
+// For Tasks
+app.get("/tasks", (req, res) => {
+  const { username } = req.query;
+
+  fs.readFile("./db/tasks.json", "utf-8", (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        message: "Error reading tasks database",
+      });
+    }
+
+    const parsedData = JSON.parse(data);
+
+    const foundUser = parsedData.users.find(
+      (user) => user.username === username
+    );
+
+    if (!foundUser) {
+      return res.status(404).json({
+        message: "User tasks not found",
+      });
+    }
+
+    res.status(200).json({
+     foundUser
+    });
+  });
+});
+
+
+
+
 // ----------------- START SERVER -----------------
 app.listen(3000, () => {
   console.log("Server running on port 3000");

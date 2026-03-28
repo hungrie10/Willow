@@ -2,30 +2,35 @@
   {
     "id": 1,
     "name": "Alice Johnson",
+    "username": "alice_johnson",
     "email": "alice@example.com",
     "password": "password123"
   },
   {
     "id": 2,
     "name": "Bob Smith",
+    "username": "bob_smith",
     "email": "bob@example.com",
     "password": "456"
   },
   {
     "id": 3,
     "name": "Charlie Brown",
+    "username": "charlie_brown",
     "email": "charlie@example.com",
     "password": "charlie789"
   },
   {
     "id": 4,
     "name": "Diana Prince",
+    "username": "diana_prince",
     "email": "diana@example.com",
     "password": "wonder123"
   },
   {
     "id": 5,
     "name": "Ethan Hunt",
+    "username": "ethan_hunt",
     "email": "ethan@example.com",
     "password": "mission456"
   }
