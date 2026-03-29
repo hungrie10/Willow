@@ -40,6 +40,20 @@ function Dashboard() {
     setCurrInd((prev) => prev + nextChunk.length);
   }
 
+  function show_prev_tasks() {
+  if (curr_ind <= 0) return; // already at the beginning
+
+  // Calculate new starting index
+  const newIndex = Math.max(0, curr_ind - capacity);
+
+  // Slice previous chunk
+  const prevChunk = tasks.slice(newIndex, newIndex + capacity);
+
+  setCurrentChunk(prevChunk);
+
+  // Update curr_ind
+  setCurrInd(newIndex);
+}
   
 
   const changeModes = function () {
@@ -178,7 +192,10 @@ function Dashboard() {
               <div className="avatar"></div>
             </div>
           </section>
-            <div className="ctrl_panel" onClick={show_next_tasks}>+</div>
+          <div className="ctrl_panel">
+            <span  onClick={show_next_tasks}>+</span>
+            <span  onClick={show_prev_tasks}>-</span>
+            </div>
           <section className="cards">
 
             
