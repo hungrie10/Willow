@@ -292,38 +292,6 @@ header nav ul li {
   overflow-x: hidden;
 }
 
-/* Question: why is overflow-x auto instead of scroll?
-  Copilot -  Using `overflow-x: auto` allows the scrollbar to appear only when necessary, meaning it will only show if the content exceeds the width of the container. This provides a cleaner and more user-friendly experience, as it avoids displaying a scrollbar when it's not needed. On the other hand, `overflow-x: scroll` would always show a scrollbar, even if the content fits within the container, which can be visually distracting and unnecessary.
-
-  Me -  so technically no need for webkit-scrollbar 
-  right 
-
-  Copilot - Correct, if you are using `overflow-x: auto`, the scrollbar will only appear when necessary, so you may not need to hide it with `::-webkit-scrollbar`. However, if you want to ensure that the scrollbar is hidden regardless of the content size, you can still use `::-webkit-scrollbar` to hide it. It ultimately depends on your design preferences and how you want the user experience to be.
-
-  Me - is web dev still a relevant skill in 2026?
-
-  Copilot - Yes, web development is still a relevant skill in 2026. The web continues to be a primary platform for communication, commerce, and entertainment, and there is a constant demand for skilled web developers to create and maintain websites and web applications. Additionally, with the rise of new technologies and frameworks, web development is an ever-evolving field that offers many opportunities for growth and innovation.
-
-  Me - I'm in a semester before and I want a job in tech  so I need direction
-
-  Copilot - If you're in your final semester and looking for a job in tech, here are some steps you can take to increase your chances of landing a job:
-   
-  -  Build a strong portfolio: Create projects that showcase your skills and knowledge in web development. This can include personal projects, contributions to open-source projects, or internships.
-
-  -  Network: Attend tech meetups, conferences, and events to connect with professionals in the industry. Join online communities and forums related to web development to engage with others and learn from their experiences.
-
-  -  Tailor your resume and cover letter: Highlight your relevant skills, experiences, and projects in your resume and cover letter. Make sure to customize them for each job application to show how you can contribute to the specific company.
-
-  Me:
-  - I've never done like an internship were i work for a company before, how do I get one of those?
-
-  - Would they even take me even though im in 3rd year?
-
-  Copilot:
-   
-
-*/
-
 #inner_fourth_layer {
   display: flex;
   gap: 20px;
@@ -697,7 +665,6 @@ header nav ul li {
   justify-content: space-between;
   align-items: center;
   height: 50%;
-  border: #ffd700 solid;
 }
 
 #willows_dashboard .banner h1 {
@@ -750,12 +717,10 @@ header nav ul li {
   border: 1px solid #ddd;
   display: flex;
   height: 90%;
-  justify-content: ;
+  justify-content:;
   align-items: center;
   flex-direction: column;
 }
-
-
 
 #willows_dashboard footer {
   width: 100%;
@@ -802,7 +767,7 @@ header nav ul li {
   width: 90%;
   gap: 1px;
   margin-bottom: 12px;
-justify-content: space-between;
+  justify-content: space-between;
 }
 
 /* Icons */
@@ -833,13 +798,13 @@ justify-content: space-between;
   align-items: center;
 }
 
-#willow-dashboard  .card-title {
+#willow-dashboard .card-title {
   font-size: 16px;
   font-weight: 500;
-text-align: center;
+  text-align: center;
 }
 
-#willows_dashboard .card .card-content{
+#willows_dashboard .card .card-content {
   border: solid 0.2px;
   border: solid 0.2px rgba(0, 0, 0, 0.144) !important;
   padding: 12px;
@@ -847,11 +812,149 @@ text-align: center;
   height: 90% !important;
 }
 
-#willows_dashboard .card {
-
+#willows_dashboard .ctrl_panel {
+  display: flex;
+  /* background: red; */
+  margin-block: 1%;
+  justify-content: end;
+  padding-inline: 1%;
 }
 
+#willows_dashboard .ctrl_panel #btns{
+  display: flex;
+  gap: 2vh;
+  width: 10%;
+  align-items: center;
+ justify-content: center;
+}
 
+#willows_dashboard .ctrl_panel #btns span{
+  /* border: solid 0.2px gray; */
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#willows_dashboard #add_task_prompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+
+  z-index: 1000;
+  transition: opacity 0.25s ease;
+}
+
+/* SHOW STATE */
+#willows_dashboard #add_task_prompt.show_me {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* The card */
+#willows_dashboard #add_task_prompt article {
+  background: #ffffff;
+  padding: 20px;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* animation: fadeIn 0.2s ease-in-out; */
+  /* height: 80%; */
+}
+
+/* Title */
+#willows_dashboard #add_task_prompt h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: normal;
+}
+
+/* Textarea */
+#willows_dashboard #add_task_prompt textarea {
+  width: 100%;
+  height: 70px;
+  resize: none;
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  align-items: center;
+  outline: none;
+  font-size: 14px;
+  justify-content: center;
+}
+
+#willows_dashboard #add_task_prompt textarea:focus {
+  border-color: #4f46e5;
+}
+
+/* Buttons container */
+#willows_dashboard #prompt {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+#willows_dashboard #prompt button:first-child {
+  background: #4f46e5;
+  color: white;
+  border: none;
+
+  padding: 8px 14px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#willows_dashboard #prompt button:first-child:hover {
+  background: #4338ca;
+}
+
+/* Close button */
+#willows_dashboard #prompt button:last-child {
+  background: #eee;
+  border: none;
+
+  padding: 8px 12px;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#willows_dashboard #prompt button:last-child:hover {
+  background: #ddd;
+}
+
+/* Simple animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 #willows_dashboard.drk_mode {
   background: #000;

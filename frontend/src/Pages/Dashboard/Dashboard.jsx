@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import profile from "../../assets/profile_test.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faDoorOpen,
   faGridHorizontal,
+  faMinus,
   faPen,
   faRedo,
   faTrash,
@@ -19,6 +21,8 @@ import { useRef } from "react";
 
 function Dashboard() {
   const bod_ref = useRef(null);
+  const inp_ref_me = useRef(null);
+  const focus_me = useRef(null);
 
   const [user_data, set_user_data] = useState();
 
@@ -33,11 +37,21 @@ function Dashboard() {
     }
     set_start((prev) => prev + 3);
   }
-  
+
   function show_prev_task() {
-    if (start_here  == 0) return;
-    
+    if (start_here == 0) return;
+
     set_start((prev) => prev - 3);
+  }
+
+  function prompt_me() {
+    inp_ref_me.current.classList.add("show_me");
+    focus_me.current["focus"]()
+  }
+  
+  function remove_prompt() {
+    inp_ref_me.current.classList.remove("show_me");
+    focus_me.current["value"] = "";
   }
 
   const changeModes = function () {
@@ -95,8 +109,6 @@ function Dashboard() {
       get_users_tasks();
     }
   }, [user_data]);
-
- 
 
   // show_next_tasks()
 
@@ -174,15 +186,26 @@ function Dashboard() {
               <div className="avatar"></div>
             </div>
           </section>
+
+
           <div className="ctrl_panel">
+
+            
+            <div id="btns">
             <span onClick={show_next_task}>+</span>
             <span onClick={show_prev_task}>-</span>
+            </div>
+            
+
           </div>
+
+          
           <section className="cards">
             {visibleTasks?.map((i) => (
               <div className="card">
                 <div className="card-controls">
                   <FontAwesomeIcon icon={faPen} className="icon edit" />
+                  <FontAwesomeIcon icon={faDoorOpen} className="icon delete" />
                   <FontAwesomeIcon icon={faTrash} className="icon delete" />
                 </div>
 
@@ -203,12 +226,23 @@ function Dashboard() {
 
       <footer>
         <section id="inner_footer">
-          <button>
+          <button onClick={prompt_me}>
             <FontAwesomeIcon icon={faPlusCircle} />
           </button>
           {/* <span></span> */}
         </section>
       </footer>
+
+      <div id="add_task_prompt" ref={inp_ref_me}>
+        <article>
+          <h3>Write a task</h3>
+          <textarea ref={focus_me} name="" id="" cols="30"></textarea>
+          <div id="prompt">
+            <button><span>🚀</span><span>Add Task</span></button>
+            <button onClick={remove_prompt} ><FontAwesomeIcon icon={faMinus} /></button>
+          </div>
+              </article>
+      </div>
     </section>
   );
 }
