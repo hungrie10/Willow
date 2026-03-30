@@ -67,6 +67,8 @@ function Dashboard() {
     set_undone(true)
   }
 
+  const [activeCategory, setActiveCategory] = useState("all");
+
   function prompt_me() {
     inp_ref_me.current.classList.add("show_me");
     focus_me.current["focus"]();
@@ -207,9 +209,18 @@ function Dashboard() {
 
           <div className="ctrl_panel">
             <div id="categories">
-              <span onClick={change_all}>All</span>
-              <span onClick={change_finished}>Finished</span>
-              <span onClick={change_undone}>Undone</span>
+              <span className={activeCategory === "all" ? "active_tab" : ""} onClick={() => {
+                change_all();
+                setActiveCategory("all");
+              }}>All</span>
+              <span className={activeCategory === "finished" ? "active_tab" : ""} onClick={() => {
+                change_finished();
+                setActiveCategory("finished");
+              }}>Finished</span>
+              <span className={activeCategory === "undone" ? "active_tab" : ""} onClick={() => {
+                change_undone();
+                setActiveCategory("undone");
+              }}>Undone</span>
             </div>
 
             <div id="btns">

@@ -25,21 +25,7 @@
       "id": 2,
       "username": "bob_smith",
       "tasks": [
-        { "id": 1, "title": "Create signup form", "completed": true },
-        { "id": 2, "title": "Fix React routing", "completed": false },
-        { "id": 3, "title": "Design navbar", "completed": true },
-        { "id": 4, "title": "Build settings page", "completed": false },
-        { "id": 5, "title": "Add animations", "completed": false },
-        { "id": 6, "title": "Fix login errors", "completed": true },
-        { "id": 7, "title": "Add remember me", "completed": false },
-        { "id": 8, "title": "Improve CSS layout", "completed": false },
-        { "id": 9, "title": "Create footer", "completed": true },
-        { "id": 10, "title": "Refactor components", "completed": false },
-        { "id": 11, "title": "Optimize images", "completed": false },
-        { "id": 12, "title": "Create modal", "completed": true },
-        { "id": 13, "title": "Test responsiveness", "completed": false },
-        { "id": 14, "title": "Fix API bug", "completed": false },
-        { "id": 15, "title": "Deploy app", "completed": true }
+        { "id": 1, "title": "Create signup form", "completed": true }
       ]
     },
     {
