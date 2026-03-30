@@ -26,8 +26,7 @@ function Dashboard() {
 
   const [user_data, set_user_data] = useState();
 
-
-//  All Tasks
+  //  All Tasks
   const [tasks, setTasks] = useState([]);
   const [start_here, set_start] = useState(0);
 
@@ -46,13 +45,33 @@ function Dashboard() {
     set_start((prev) => prev - 3);
   }
 
+  const [all, set_all] = useState(true);
+  const [finished, set_finished] = useState(false);
+  const [undone, set_undone] = useState(false);
 
+  function change_all() {
+    set_undone(false)
+    set_finished(false);
+    set_all(true);
+  }
+
+  function change_finished() {
+    set_all(false);
+    set_undone(false)
+    set_finished(true);
+  }
+
+  function change_undone() {
+    set_all(false);
+    set_finished(false);
+    set_undone(true)
+  }
 
   function prompt_me() {
     inp_ref_me.current.classList.add("show_me");
-    focus_me.current["focus"]()
+    focus_me.current["focus"]();
   }
-  
+
   function remove_prompt() {
     inp_ref_me.current.classList.remove("show_me");
     focus_me.current["value"] = "";
@@ -183,47 +202,81 @@ function Dashboard() {
               <button>Start Here</button>
             </div>
 
-            <div className="avatars">
-              <div className="avatar"></div>
-              <div className="avatar"></div>
-              <div className="avatar"></div>
-              <div className="avatar"></div>
-            </div>
+            <div className="avatars"></div>
           </section>
 
-
           <div className="ctrl_panel">
-
             <div id="categories">
-            <span>All</span>
-            <span>Finished</span>
-            <span>Undone</span>
+              <span onClick={change_all}>All</span>
+              <span onClick={change_finished}>Finished</span>
+              <span onClick={change_undone}>Undone</span>
             </div>
-            
-            <div id="btns">
-            <span onClick={show_next_task}>+</span>
-            <span onClick={show_prev_task}>-</span>
-            </div>
-            
-      
 
+            <div id="btns">
+              <span onClick={show_next_task}>+</span>
+              <span onClick={show_prev_task}>-</span>
+            </div>
           </div>
 
-
           <section className="cards">
-            {visibleTasks?.map((i) => (
-              <div className="card">
-                <div className="card-controls">
-                  <FontAwesomeIcon icon={faPen} className="icon edit" />
-                  <FontAwesomeIcon icon={faDoorOpen} className="icon delete" />
-                  <FontAwesomeIcon icon={faTrash} className="icon delete" />
-                </div>
+            {visibleTasks?.map((i) => {
+              if (all) {
+                return (
+                  <div className="card">
+                    <div className="card-controls">
+                      <FontAwesomeIcon icon={faPen} className="icon edit" />
+                      <FontAwesomeIcon
+                        icon={faDoorOpen}
+                        className="icon delete"
+                      />
+                      <FontAwesomeIcon icon={faTrash} className="icon delete" />
+                    </div>
 
-                <div className="card-content">
-                  <h3 className="card-title">{i?.title}</h3>
-                </div>
-              </div>
-            ))}
+                    <div className="card-content">
+                      <h3 className="card-title">{i?.title}</h3>
+                    </div>
+                  </div>
+                );
+              }
+              if (undone) {
+                if (!i["completed"]){
+                return (
+                  <div className="card">
+                    <div className="card-controls">
+                      <FontAwesomeIcon icon={faPen} className="icon edit" />
+                      <FontAwesomeIcon
+                        icon={faDoorOpen}
+                        className="icon delete"
+                      />
+                      <FontAwesomeIcon icon={faTrash} className="icon delete" />
+                    </div>
+
+                    <div className="card-content">
+                      <h3 className="card-title">{i?.title}</h3>
+                    </div>
+                  </div>
+                );}
+              }
+              if (finished) {
+                if (i["completed"]){
+                return (
+                  <div className="card">
+                    <div className="card-controls">
+                      <FontAwesomeIcon icon={faPen} className="icon edit" />
+                      <FontAwesomeIcon
+                        icon={faDoorOpen}
+                        className="icon delete"
+                      />
+                      <FontAwesomeIcon icon={faTrash} className="icon delete" />
+                    </div>
+
+                    <div className="card-content">
+                      <h3 className="card-title">{i?.title}</h3>
+                    </div>
+                  </div>
+                );}
+              }
+            })}
           </section>
         </main>
       </section>
@@ -242,10 +295,15 @@ function Dashboard() {
           <h3>Write a task</h3>
           <textarea ref={focus_me} name="" id="" cols="30"></textarea>
           <div id="prompt">
-            <button><span>🚀</span><span>Add Task</span></button>
-            <button onClick={remove_prompt} ><FontAwesomeIcon icon={faMinus} /></button>
+            <button>
+              <span>🚀</span>
+              <span>Add Task</span>
+            </button>
+            <button onClick={remove_prompt}>
+              <FontAwesomeIcon icon={faMinus} />
+            </button>
           </div>
-              </article>
+        </article>
       </div>
     </section>
   );
