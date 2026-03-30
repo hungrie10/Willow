@@ -26,6 +26,8 @@ function Dashboard() {
 
   const [user_data, set_user_data] = useState();
 
+
+//  All Tasks
   const [tasks, setTasks] = useState([]);
   const [start_here, set_start] = useState(0);
 
@@ -43,6 +45,8 @@ function Dashboard() {
 
     set_start((prev) => prev - 3);
   }
+
+
 
   function prompt_me() {
     inp_ref_me.current.classList.add("show_me");
@@ -190,16 +194,22 @@ function Dashboard() {
 
           <div className="ctrl_panel">
 
+            <div id="categories">
+            <span>All</span>
+            <span>Finished</span>
+            <span>Undone</span>
+            </div>
             
             <div id="btns">
             <span onClick={show_next_task}>+</span>
             <span onClick={show_prev_task}>-</span>
             </div>
             
+      
 
           </div>
 
-          
+
           <section className="cards">
             {visibleTasks?.map((i) => (
               <div className="card">
@@ -214,12 +224,6 @@ function Dashboard() {
                 </div>
               </div>
             ))}
-
-            {/* <div className="card">{tasks[curr_disp]?.title}</div>
-            <div className="card">{tasks[curr_disp + 1]?.title}</div>
-            <div className="card">{tasks[curr_disp + 2]?.title}</div> */}
-
-            {/*  */}
           </section>
         </main>
       </section>

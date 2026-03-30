@@ -816,19 +816,19 @@ header nav ul li {
   display: flex;
   /* background: red; */
   margin-block: 1%;
-  justify-content: end;
+  justify-content: space-between;
   padding-inline: 1%;
 }
 
-#willows_dashboard .ctrl_panel #btns{
+#willows_dashboard .ctrl_panel #btns {
   display: flex;
   gap: 2vh;
   width: 10%;
   align-items: center;
- justify-content: center;
+  justify-content: center;
 }
 
-#willows_dashboard .ctrl_panel #btns span{
+#willows_dashboard .ctrl_panel #btns span {
   /* border: solid 0.2px gray; */
   width: 30%;
   display: flex;
@@ -967,7 +967,6 @@ header nav ul li {
 }
 
 #willows_dashboard.drk_mode header ul #redo_btn {
-  /* border: solid 0.2px rgba(0, 0, 0, 0.136); */
   border: solid 0.2px rgba(210, 208, 208, 0.132);
   background: #000;
 }
@@ -983,6 +982,31 @@ header nav ul li {
 #willows_dashboard.drk_mode .card {
   background: #000;
 }
+
+#willows_dashboard .ctrl_panel #categories {
+  border: solid 0.2px gray;
+  display: flex;
+  justify-content: space-around;
+  gap: 3%;
+  padding: 0.3%;
+  width: 20%;
+}
+#willows_dashboard .ctrl_panel #categories span {
+  width: 30%;
+  border: solid 0.2px gray;
+  text-align: center;
+}
+
+#willows_dashboard .ctrl_panel  {
+
+}
+
+#willows_dashboard .ctrl_panel #categories span:hover {
+  background: rgb(74, 70, 70);
+  color: #000000c3;
+
+}
+
 
 #willows_dashboard.drk_mode footer {
   width: 100%;
